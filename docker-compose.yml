@@ -26,10 +26,13 @@ services:
     volumes:
       - healthchecks-config:/config
     restart: unless-stopped
+    networks:
+      - proxy
 
 volumes:
   healthchecks-config:
 
 networks:
-  cicd_proxy:
+  proxy:
+    name: cicd_proxy
     external: true
