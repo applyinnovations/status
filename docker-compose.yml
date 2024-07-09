@@ -1,7 +1,6 @@
 services:
-  healthchecks:
+  status:
     image: lscr.io/linuxserver/healthchecks:latest
-    container_name: healthchecks
     environment:
       - TZ=Australia/Brisbane
       - SITE_ROOT=https://status.applyinnovations.au
