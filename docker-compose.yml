@@ -1,5 +1,13 @@
 services:
   status:
     image: twinproduction/gatus:latest
+    restart: unless-stopped
+    networks:
+      - proxy
     volumes:
       - ./config.yml:/config/config.yml
+
+networks:
+  proxy:
+    name: cicd_proxy
+    external: true
