@@ -38,7 +38,17 @@ endpoints:
   - name: api.thecalile.app/graphql
     group: The Calile Production
     url: https://api.thecalile.app/graphql
-    interval: 30s
+    interval: 5s
+    method: POST
+    graphql: true
+    body: |
+      query ExampleQuery {
+        __schema {
+          queryType {
+            name
+          }
+        }
+      }
     conditions:
       - "[STATUS] == 200"
 
@@ -59,6 +69,16 @@ endpoints:
   - name: api.development.thecaliletest.app/graphql
     group: The Calile Development
     url: https://api.development.thecaliletest.app/graphql
-    interval: 30s
+    interval: 5s
+    method: POST
+    graphql: true
+    body: |
+      query ExampleQuery {
+        __schema {
+          queryType {
+            name
+          }
+        }
+      }
     conditions:
       - "[STATUS] == 200"
