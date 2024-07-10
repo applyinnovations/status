@@ -1,0 +1,11 @@
+endpoints:
+  - name: status
+    url: https://status.applyinnovations.au
+    interval: 1s
+    conditions:
+      - "[STATUS] == 200"
+  - name: cicd
+    url: https://cicd.applyinnovations.au
+    interval: 1s
+    conditions:
+      - "[STATUS] == 200"
