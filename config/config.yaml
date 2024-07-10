@@ -1,15 +1,64 @@
+ui:
+  title: Status | Apply Innovations
+  header: Apply Innovations
+
 storage:
   type: sqlite
   path: /data/data.db
 
 endpoints:
   - name: status
+    group: Apply Innovations
     url: https://status.applyinnovations.au
-    interval: 1s
+    interval: 5s
     conditions:
       - "[STATUS] == 200"
+
   - name: cicd
+    group: Apply Innovations
     url: https://cicd.applyinnovations.au
-    interval: 1s
+    interval: 5s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: thecalile.app
+    group: The Calile Production
+    url: https://thecalile.app
+    interval: 5s
+    conditions:
+      - "[STATUS] == 200"
+      
+  - name: api.thecalile.app/status
+    group: The Calile Production
+    url: https://api.thecalile.app/status
+    interval: 5s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: api.thecalile.app/graphql
+    group: The Calile Production
+    url: https://api.thecalile.app/graphql
+    interval: 30s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: development.thecaliletest.app
+    group: The Calile Development
+    url: https://development.thecaliletest.app
+    interval: 5s
+    conditions:
+      - "[STATUS] == 200"
+      
+  - name: api.development.thecaliletest.app/status
+    group: The Calile Development
+    url: https://api.development.thecaliletest.app/status
+    interval: 5s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: api.development.thecaliletest.app/graphql
+    group: The Calile Development
+    url: https://api.development.thecaliletest.app/graphql
+    interval: 30s
     conditions:
       - "[STATUS] == 200"
