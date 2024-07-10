@@ -1,3 +1,7 @@
+storage:
+  type: sqlite
+  path: /data/data.db
+
 endpoints:
   - name: status
     url: https://status.applyinnovations.au

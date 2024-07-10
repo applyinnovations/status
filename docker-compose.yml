@@ -6,6 +6,10 @@ services:
       - proxy
     volumes:
       - ./config:/config
+      - data:/data
+
+volumes:
+  data:
 
 networks:
   proxy:
