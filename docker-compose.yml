@@ -1,11 +1,11 @@
 services:
   status:
-    image: twinproduction/gatus:latest
+    build:
+      context: .
     restart: unless-stopped
     networks:
       - proxy
     volumes:
-      - ./config:/config
       - data:/data
 
 volumes:
